@@ -1,5 +1,7 @@
 # Hardware and wiring
 
+**English | [Polski](wiring_PL.md)**
+
 ## I2C sensors
 
 | Device | VCC | GND | SDA | SCL | Address |
