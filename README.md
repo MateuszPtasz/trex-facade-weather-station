@@ -1,5 +1,7 @@
 # T-REX Facade Weather Station
 
+**English | [Polski](README_PL.md)**
+
 ## What is T-REX Facade Weather Station
 
 Open DIY facade weather station based on ESP32-C3 Super Mini.
