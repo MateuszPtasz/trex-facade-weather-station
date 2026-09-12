@@ -2,6 +2,46 @@
 
 **[English](wiring.md) | Polski**
 
+## Diagram połączeń
+
+```mermaid
+flowchart LR
+    BAT[Bateria 1S] -->|BAT+| R1[220 kOhm]
+    R1 --> ADC[GPIO3 / ADC]
+    ADC --> R2[100 kOhm]
+    R2 --> GND[GND]
+    ADC --> C[100 nF]
+    C --> GND
+
+    ESP[ESP32-C3 Super Mini]
+    BME[BME280 0x76]
+    VEML[VEML7700 0x10]
+    RAIN[RainPoint - styk bezpotencjałowy]
+
+    ESP -->|3.3 V| BME
+    ESP -->|3.3 V| VEML
+    ESP -->|GPIO8 SDA| BME
+    ESP -->|GPIO9 SCL| BME
+    ESP -->|GPIO8 SDA| VEML
+    ESP -->|GPIO9 SCL| VEML
+
+    ESP -->|3V3| RAIN
+    RAIN -->|GPIO4| ESP
+
+    BAT --> ESP
+    GND --- ESP
+    GND --- BME
+    GND --- VEML
+```
+
+Diagram jest celowo schematem funkcjonalnym, a nie projektem PCB. Pokazuje połączenia elektryczne potrzebne do odtworzenia prototypu.
+
+## Integracja mechaniczna prototypu
+
+W aktualnym prototypie obudowa RainPoint jest wykorzystywana jako obudowa całej stacji fasadowej. Oryginalny mechaniczny czujnik deszczu RainPoint pozostaje podłączony jako styk bezpotencjałowy, a wewnątrz tej samej obudowy umieszczone są ESP32-C3, BME280, VEML7700, dzielnik do pomiaru baterii oraz źródło zasilania.
+
+Dokładne rozmieszczenie elementów zależy od wersji obudowy RainPoint i użytych podzespołów. Elektronikę należy chronić przed bezpośrednim dostaniem się wody, a czujniki środowiskowe umieścić tak, aby mogły mierzyć warunki, do których są przeznaczone.
+
 ## Czujniki I2C
 
 | Urządzenie | VCC | GND | SDA | SCL | Adres |
