@@ -19,6 +19,16 @@ Stacja powstała jako element automatyki rolet T-REX Smart Home, ale jest niezal
 - Pomiar napięcia baterii z edytowalną tabelą kalibracyjną.
 - Portal konfiguracji Wi-Fi oraz telemetria i discovery przez UDP.
 
+## Obudowa prototypu i wykorzystanie RainPoint
+
+W aktualnym prototypie wykorzystujemy obudowę RainPoint jako obudowę całej stacji fasadowej.
+
+Oryginalny mechaniczny czujnik deszczu RainPoint pozostaje aktywnym elementem urządzenia i jest używany jako bezpotencjałowy styk sygnalizujący stan deszczu. W tej samej obudowie umieszczone są ESP32-C3, BME280, VEML7700, układ pomiaru baterii oraz zasilanie.
+
+Dzięki temu nie trzeba projektować od zera osobnej obudowy odpornej na warunki zewnętrzne, a oryginalny mechanizm detekcji deszczu pozostaje częścią gotowej stacji.
+
+Dokładne rozmieszczenie elementów może zależeć od wersji obudowy RainPoint oraz użytych podzespołów. Czujniki środowiskowe powinny mieć kontakt z warunkami, które mają mierzyć, a elektronika powinna być chroniona przed bezpośrednim dostaniem się wody.
+
 ## Sprzęt
 
 | Element | Zastosowanie |
@@ -26,10 +36,10 @@ Stacja powstała jako element automatyki rolet T-REX Smart Home, ale jest niezal
 | ESP32-C3 Super Mini | sterownik i Wi-Fi |
 | BME280 | temperatura, wilgotność i ciśnienie |
 | VEML7700 | natężenie oświetlenia |
-| RainPoint | bezpotencjałowy czujnik deszczu |
+| RainPoint | obudowa prototypu i bezpotencjałowy czujnik deszczu |
 | bateria 1S + dzielnik napięcia | zasilanie i telemetria baterii |
 
-Pełne połączenia znajdują się w [hardware/wiring_PL.md](hardware/wiring_PL.md).
+Pełne połączenia i diagram znajdują się w [hardware/wiring_PL.md](hardware/wiring_PL.md).
 
 ## Podłączenie
 
@@ -141,6 +151,7 @@ Firmware zawiera tabelę kalibracyjną przygotowaną dla prototypu. Przy innym e
 - Stacja odpowiada na discovery tylko podczas krótkiego okresu aktywności po wybudzeniu.
 - Aktualny firmware ma `CONFIG_TIME_MS` ustawione na 10 minut, mimo że jeden z komunikatów tekstowych nadal mówi o 20 minutach.
 - Repo nie zawiera gotowej integracji Home Assistant; dane można odbierać bezpośrednio z UDP albo przepuścić przez własny bridge.
+- Integracja mechaniczna z obudową RainPoint dotyczy prototypu; sposób montażu może się różnić między wykonaniami.
 
 ## Licencja
 
