@@ -1,5 +1,7 @@
 # T-REX facade station UDP protocol
 
+**English | [Polski](protocol_PL.md)**
+
 This is a UDP protocol, not an HTTP API.
 
 ## Transport
