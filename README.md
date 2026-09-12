@@ -20,6 +20,16 @@ The station was created for T-REX Smart Home roller-shutter automation, but is a
 - Battery measurement with an editable calibration table.
 - Wi-Fi configuration portal and UDP telemetry/discovery.
 
+## Prototype enclosure and RainPoint integration
+
+The current prototype reuses the RainPoint enclosure as the physical enclosure for the complete facade station.
+
+The original RainPoint mechanical rain sensor remains in use as a dry-contact rain detector. The ESP32-C3, BME280, VEML7700, battery-measurement circuit and power source are installed inside the same enclosure.
+
+This avoids designing a weather-resistant enclosure from scratch and keeps the original rain-sensing mechanism as part of the finished station.
+
+The exact mechanical placement may depend on the RainPoint enclosure version and the builder's components. Keep the environmental sensors exposed to the conditions they are intended to measure, while protecting the electronics from direct water ingress.
+
 ## Hardware
 
 | Part | Purpose |
@@ -27,10 +37,10 @@ The station was created for T-REX Smart Home roller-shutter automation, but is a
 | ESP32-C3 Super Mini | controller and Wi-Fi |
 | BME280 | temperature, humidity and pressure |
 | VEML7700 | illuminance |
-| RainPoint | dry-contact rain input |
+| RainPoint | enclosure and dry-contact rain sensor in the prototype |
 | 1S battery with divider | power and battery telemetry |
 
-See [hardware/wiring.md](hardware/wiring.md) for the complete wiring table.
+See [hardware/wiring.md](hardware/wiring.md) for the complete wiring table and connection diagram.
 
 ## Wiring
 
@@ -133,6 +143,7 @@ Firmware includes a prototype-specific ADC calibration table; verify it with a m
 - The station receives discovery only while awake.
 - Configuration serial text says 20 minutes, while `CONFIG_TIME_MS` is ten minutes.
 - No Home Assistant integration is included; consume UDP directly or bridge it.
+- RainPoint enclosure integration is prototype-specific; mechanical mounting details may differ between builds.
 
 ## License
 
