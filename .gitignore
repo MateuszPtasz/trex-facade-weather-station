@@ -1,0 +1,7 @@
+.pio/
+.vscode/
+*.code-workspace
+credentials.h
+secrets.h
+*.pem
+*.key
