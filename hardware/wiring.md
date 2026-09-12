@@ -2,6 +2,46 @@
 
 **English | [Polski](wiring_PL.md)**
 
+## Connection diagram
+
+```mermaid
+flowchart LR
+    BAT[1S battery] -->|BAT+| R1[220 kOhm]
+    R1 --> ADC[GPIO3 / ADC]
+    ADC --> R2[100 kOhm]
+    R2 --> GND[GND]
+    ADC --> C[100 nF]
+    C --> GND
+
+    ESP[ESP32-C3 Super Mini]
+    BME[BME280 0x76]
+    VEML[VEML7700 0x10]
+    RAIN[RainPoint dry contact]
+
+    ESP -->|3.3 V| BME
+    ESP -->|3.3 V| VEML
+    ESP -->|GPIO8 SDA| BME
+    ESP -->|GPIO9 SCL| BME
+    ESP -->|GPIO8 SDA| VEML
+    ESP -->|GPIO9 SCL| VEML
+
+    ESP -->|3V3| RAIN
+    RAIN -->|GPIO4| ESP
+
+    BAT --> ESP
+    GND --- ESP
+    GND --- BME
+    GND --- VEML
+```
+
+The diagram is intentionally functional rather than a PCB schematic. It shows the electrical connections needed to reproduce the prototype.
+
+## Prototype mechanical integration
+
+In the current prototype, the RainPoint enclosure is reused as the enclosure for the complete facade station. The original RainPoint mechanical rain detector remains connected as the dry-contact sensor, while the ESP32-C3, BME280, VEML7700, battery-measurement divider and power source are installed inside the same enclosure.
+
+Mechanical placement depends on the exact RainPoint enclosure and the parts used. Protect the electronics from direct water ingress and place the environmental sensors so they can measure the conditions they are intended to sense.
+
 ## I2C sensors
 
 | Device | VCC | GND | SDA | SCL | Address |
