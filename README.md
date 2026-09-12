@@ -1,5 +1,7 @@
 # T-REX Facade Weather Station
 
+## What is T-REX Facade Weather Station
+
 Open DIY facade weather station based on ESP32-C3 Super Mini.
 
 It measures temperature, humidity, pressure, illuminance, rain, battery voltage and Wi-Fi RSSI.
