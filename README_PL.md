@@ -10,6 +10,16 @@ Mierzy temperaturę, wilgotność, ciśnienie, natężenie oświetlenia, stan de
 
 Stacja powstała jako element automatyki rolet T-REX Smart Home, ale jest niezależnym projektem i można ją zintegrować z własnym systemem.
 
+## Dokumentacja
+
+- [Instrukcja budowy](docs/build_PL.md) — części, montaż, pierwsze uruchomienie i kontrola przed zamknięciem obudowy.
+- [Galeria prototypu](docs/gallery_PL.md) — obudowa RainPoint, wnętrze i panel WWW.
+- [Połączenia](hardware/wiring_PL.md) — pinout i funkcjonalny diagram połączeń.
+- [Protokół UDP](docs/protocol_PL.md) — discovery, telemetria i schema JSON.
+- [Checklista walidacji](docs/testing_PL.md) — powtarzalne sprawdzenie hardware i firmware.
+- [Changelog](CHANGELOG.md)
+- [Zasady współtworzenia](CONTRIBUTING.md)
+
 ## Funkcje
 
 - Firmware v1.2.2 dla ESP32-C3 Super Mini.
@@ -28,6 +38,8 @@ Oryginalny mechaniczny czujnik deszczu RainPoint pozostaje aktywnym elementem ur
 Dzięki temu nie trzeba projektować od zera osobnej obudowy odpornej na warunki zewnętrzne, a oryginalny mechanizm detekcji deszczu pozostaje częścią gotowej stacji.
 
 Dokładne rozmieszczenie elementów może zależeć od wersji obudowy RainPoint oraz użytych podzespołów. Czujniki środowiskowe powinny mieć kontakt z warunkami, które mają mierzyć, a elektronika powinna być chroniona przed bezpośrednim dostaniem się wody.
+
+Aktualny montaż można zobaczyć w [galerii prototypu](docs/gallery_PL.md).
 
 ## Sprzęt
 
