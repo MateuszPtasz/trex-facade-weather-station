@@ -2,36 +2,39 @@
 
 **[English](gallery.md) | Polski**
 
-Ta strona dokumentuje aktualny, działający prototyp T-REX Facade Weather Station.
+Strona dokumentuje aktualny, działający prototyp T-REX Facade Weather Station.
+Zawiera wyłącznie bezpieczne publicznie zdjęcia i zrzuty: bez zapisanych haseł
+Wi-Fi, prywatnej nazwy sieci oraz adresu sieci lokalnej.
 
-## Montaż wewnątrz obudowy
+## Obudowa RainPoint i moduł zasilania
 
-W aktualnym prototypie wykorzystana jest oryginalna obudowa RainPoint. Sterownik ESP32-C3 oraz elektronika czujników i zasilania są upakowane wewnątrz, a oryginalny mechaniczny styk deszczu RainPoint pozostaje aktywną częścią stacji.
+![Obudowa RainPoint i moduł stabilnego 5 V](../images/station-enclosure-power-module.jpeg)
 
-![Montaż wewnętrzny](../images/station-internal.jpg)
+Prototyp wykorzystuje obudowę RainPoint. Moduł z serii MT zapewnia stabilne
+zasilanie 5 V wewnątrz obudowy.
 
-## Czujnik deszczu i detal obudowy
+## Montaż wewnętrzny
 
-Oryginalny mechanizm bezpotencjałowego styku RainPoint pozostaje w układzie i jest podłączony do wejścia deszczu ESP32-C3.
+![ESP32-C3 Mini i czujnik BME](../images/station-internal-esp32-c3-bme.jpeg)
 
-![Detal czujnika deszczu](../images/station-rain-sensor.jpg)
+Sterownik ESP32-C3 Mini oraz czujnik BME temperatury, wilgotności i ciśnienia
+zamontowane w prototypie.
 
-## Widok obudowy
+![Czujnik światła](../images/station-light-sensor.jpeg)
 
-Zdjęcie pokazuje, jak elektronika mieści się w korpusie RainPoint przed ostatecznym zamknięciem obudowy.
-
-![Widok obudowy](../images/station-enclosure.jpg)
+Dedykowany czujnik światła przygotowany dla stacji fasadowej.
 
 ## Interfejs WWW
 
-Po fizycznym włączeniu lub resecie stacja udostępnia lokalny panel konfiguracyjny. Panel pokazuje identyfikator stacji, wersję firmware i hardware, aktualne wartości czujników, stan baterii oraz status Wi-Fi.
+![Konfiguracja Wi-Fi](../images/web-config.png)
 
-![Panel WWW](../images/web-dashboard.jpg)
-
-Dolna część strony umożliwia skanowanie sieci Wi-Fi, zapis danych dostępowych oraz wykonanie podstawowych czynności diagnostycznych.
-
-![Konfiguracja WWW](../images/web-config.jpg)
+Lokalny panel WWW umożliwia konfigurację Wi-Fi i podstawową diagnostykę.
+Zrzut pokazuje pusty formularz, bez zapisanej nazwy sieci lub hasła.
 
 ## Uwagi
 
-Zdjęcia przedstawiają aktualny prototyp, a nie produkcyjną płytkę PCB ani finalną konstrukcję mechaniczną. Rozmieszczenie elementów może się zmieniać pomiędzy egzemplarzami. Elementami odtwarzalnymi projektu są przede wszystkim połączenia elektryczne, zachowanie firmware oraz logika styku RainPoint opisana w pozostałej dokumentacji repozytorium.
+Zdjęcia przedstawiają aktualny prototyp, a nie produkcyjną płytkę PCB ani
+finalną konstrukcję mechaniczną. Rozmieszczenie elementów może się zmieniać
+pomiędzy egzemplarzami. Elementami odtwarzalnymi projektu są połączenia
+elektryczne, zachowanie firmware oraz logika styku RainPoint opisana w
+pozostałej dokumentacji repozytorium.

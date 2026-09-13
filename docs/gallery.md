@@ -3,35 +3,38 @@
 **English | [Polski](gallery_PL.md)**
 
 This page documents the current working T-REX Facade Weather Station prototype.
+Only public-safe photographs and screenshots are included: no saved Wi-Fi
+credentials, private SSID or local network address is visible.
+
+## RainPoint enclosure and power module
+
+![RainPoint enclosure and stable 5 V module](../images/station-enclosure-power-module.jpeg)
+
+The prototype reuses the RainPoint enclosure. An MT-series module provides a
+stable 5 V supply inside the housing.
 
 ## Internal assembly
 
-The current prototype reuses the RainPoint enclosure. The ESP32-C3 controller and sensor/power electronics are packed inside the original housing while the RainPoint mechanical rain contact remains in use.
+![ESP32-C3 Mini and BME sensor](../images/station-internal-esp32-c3-bme.jpeg)
 
-![Internal assembly](../images/station-internal.jpg)
+ESP32-C3 Mini controller and BME temperature, humidity and pressure sensor
+mounted in the prototype enclosure.
 
-## Rain sensor and enclosure detail
+![Ambient-light sensor](../images/station-light-sensor.jpeg)
 
-The original RainPoint dry-contact mechanism remains part of the build and is connected to the ESP32-C3 rain input.
-
-![Rain sensor detail](../images/station-rain-sensor.jpg)
-
-## Enclosure view
-
-This shows how the electronics fit into the RainPoint body before final closure.
-
-![Enclosure view](../images/station-enclosure.jpg)
+Dedicated ambient-light sensor prepared for the facade station.
 
 ## Web interface
 
-After power-on/reset the station exposes a local configuration interface. The dashboard shows the station identity, firmware/hardware version, current sensor values, battery state and Wi-Fi status.
+![Wi-Fi configuration page](../images/web-config.png)
 
-![Web dashboard](../images/web-dashboard.jpg)
-
-The lower part of the page provides Wi-Fi network scanning, credential setup and diagnostic actions.
-
-![Web configuration](../images/web-config.jpg)
+The local web panel provides Wi-Fi setup and basic diagnostics. The screenshot
+shows an empty configuration form only; it does not disclose a saved network or
+password.
 
 ## Notes
 
-These photographs show the current prototype rather than a production PCB or final mechanical design. Component placement may change between builds. The important reproducible parts are the electrical wiring, firmware behavior and RainPoint dry-contact logic documented elsewhere in this repository.
+These photographs show the current prototype rather than a production PCB or
+final mechanical design. Component placement may change between builds. The
+reproducible parts are the electrical wiring, firmware behavior and RainPoint
+dry-contact logic documented elsewhere in this repository.
