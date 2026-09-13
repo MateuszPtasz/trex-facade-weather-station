@@ -11,6 +11,16 @@ It publishes data through UDP and may be used without T-REX Smart Home.
 
 The station was created for T-REX Smart Home roller-shutter automation, but is an independent project.
 
+## Documentation
+
+- [Build guide](docs/build.md) — parts, assembly, first start and pre-close checks.
+- [Prototype gallery](docs/gallery.md) — RainPoint enclosure, internal assembly and web interface.
+- [Wiring](hardware/wiring.md) — pinout and functional connection diagram.
+- [UDP protocol](docs/protocol.md) — discovery, telemetry and JSON schema.
+- [Validation checklist](docs/testing.md) — repeatable hardware/firmware verification.
+- [Changelog](CHANGELOG.md)
+- [Contributing](CONTRIBUTING.md)
+
 ## Features
 
 - Firmware v1.2.2 for ESP32-C3 Super Mini.
@@ -29,6 +39,8 @@ The original RainPoint mechanical rain sensor remains in use as a dry-contact ra
 This avoids designing a weather-resistant enclosure from scratch and keeps the original rain-sensing mechanism as part of the finished station.
 
 The exact mechanical placement may depend on the RainPoint enclosure version and the builder's components. Keep the environmental sensors exposed to the conditions they are intended to measure, while protecting the electronics from direct water ingress.
+
+See the [prototype gallery](docs/gallery.md) for the current physical build.
 
 ## Hardware
 
